@@ -1,5 +1,5 @@
 #initiate variables 
-number_of_files_in_directory=$(ls | wc -l)
+number_of_files_in_directory=$(ls -1A | wc -l)
 #definition of function
 function guessinggame
 {
@@ -16,10 +16,10 @@ function guessinggame
 		else
 			if [[ $entry_of_number_of_files_by_User -gt $number_of_files_in_directory ]]
 			then
-				echo "Your guess was too low!! Please make a guess again."
+				echo "Your guess was too high!! Please make a guess again."
 				guessinggame
 			else
-				echo "Your guess was too high!! Please make a guess again"
+				echo "Your guess was too low!! Please make a guess again"
 				guessinggame
 			fi
 		fi
